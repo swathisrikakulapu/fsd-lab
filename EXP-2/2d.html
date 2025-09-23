@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frames Example</title>
+</head>
+<frameset cols="33%,33%,34%" frameborder="1" border="2" framespacing="2" noresize>
+    <!-- First frame: image -->
+    <frame src="image.html" name="frame1" noresize>
+    
+    <!-- Second frame: paragraph -->
+    <frame src="paragraph.html" name="frame2" noresize>
+    
+    <!-- Third frame: hyperlink -->
+    <frame src="link.html" name="frame3" noresize>
+    
+    <noframes>
+        <body>
+            Sorry, your browser does not support frames.
+        </body>
+    </noframes>
+</frameset>
+</html>
