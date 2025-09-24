@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Internal and External JavaScript Example</title>
+
+    <!-- Link to external JS file -->
+    <script src="script.js"></script>
+
+    <script>
+        // Internal JavaScript
+        function internalGreeting() {
+            alert("Hello from the internal JavaScript!");
+        }
+    </script>
+</head>
+<body>
+
+    <h1>JavaScript Embedding Example</h1>
+
+    <button onclick="internalGreeting()">Internal JS Greeting</button>
+    <button onclick="externalGreeting()">External JS Greeting</button>
+
+    <h2>Input and Type Conversion Example</h2>
+
+    <input type="text" id="num1" placeholder="Enter first number" />
+    <input type="text" id="num2" placeholder="Enter second number" />
+    <button onclick="addNumbers()">Add Numbers</button>
+
+</body>
+</html>

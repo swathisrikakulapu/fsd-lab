@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Different Ways to Take Input</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  .section {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #eef6ff;
+    border: 1px solid #99c;
+  }
+</style>
+</head>
+<body>
+
+<h1>Different Ways to Take Input in JavaScript</h1>
+
+<!-- 1. Prompt -->
+<div class="section">
+  <button onclick="takePromptInput()">1. Using prompt()</button>
+  <p id="promptOutput"></p>
+</div>
+
+<!-- 2. Input box -->
+<div class="section">
+  <label for="textInput">2. Using &lt;input&gt; box:</label>
+  <input type="text" id="textInput" placeholder="Type something here" />
+  <button onclick="takeInputBox()">Submit</button>
+  <p id="inputBoxOutput"></p>
+</div>
+
+<!-- 3. Textarea -->
+<div class="section">
+  <label for="textAreaInput">3. Using &lt;textarea&gt;:</label><br/>
+  <textarea id="textAreaInput" rows="4" cols="30" placeholder="Type multiline text here"></textarea><br/>
+  <button onclick="takeTextareaInput()">Submit</button>
+  <p id="textareaOutput"></p>
+</div>
+
+<!-- 4. Simple form -->
+<div class="section">
+  <form id="formInput" onsubmit="handleFormSubmit(event)">
+    <label for="formTextInput">4. Using Form input:</label>
+    <input type="text" id="formTextInput" placeholder="Form input" required />
+    <button type="submit">Submit Form</button>
+  </form>
+  <p id="formOutput"></p>
+</div>
+
+<script>
+  // 1. Prompt input
+  function takePromptInput() {
+    let userInput = prompt("Please enter something:");
+    document.getElementById("promptOutput").innerText = "You entered: " + userInput;
+  }
+
+  // 2. Input box
+  function takeInputBox() {
+    let inputVal = document.getElementById("textInput").value;
+    document.getElementById("inputBoxOutput").innerText = "You typed: " + inputVal;
+  }
+
+  // 3. Textarea input
+  function takeTextareaInput() {
+    let textVal = document.getElementById("textAreaInput").value;
+    document.getElementById("textareaOutput").innerText = "You wrote: " + textVal;
+  }
+
+  // 4. Form input with submit
+  function handleFormSubmit(event) {
+    event.preventDefault(); // prevent form from refreshing page
+    let formVal = document.getElementById("formTextInput").value;
+    document.getElementById("formOutput").innerText = "Form submitted with: " + formVal;
+  }
+</script>
+
+</body>
+</html>
