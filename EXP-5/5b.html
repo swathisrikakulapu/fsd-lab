@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Background Image Halfway and Tilted</title>
+<style>
+  body {
+    margin: 0;
+    min-height: 200vh; /* tall page for scrolling */
+  }
+
+  .bg-image {
+    position: fixed;
+    top: 50%; /* halfway down viewport */
+    left: 50%;
+    width: 500px;  /* width of background image */
+    height: 300px; /* height of background image */
+    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=500&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translate(-50%, -50%) rotate(-20deg); /* center & tilt */
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  main {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-image"></div>
+
+<main>
+  <h1>Page Content</h1>
+  <p>Scroll up and down and the background image stays fixed halfway down the viewport and tilted.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec dictum eros...</p>
+  <p>(Add more content here to allow scrolling)</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec dictum eros...</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec dictum eros...</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec dictum eros...</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec dictum eros...</p>
+</main>
+
+</body>
+</html>
