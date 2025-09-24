@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>CSS Selector Forms Complete Example</title>
+<style>
+  /* ===== Simple Selectors ===== */
+
+  /* Element selector - styles all <p> */
+  p {
+    color: navy;
+  }
+
+  /* ID selector - styles element with id="unique" */
+  #unique {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  /* Class selector - styles elements with class="highlight" */
+  .highlight {
+    background-color: yellow;
+  }
+
+  /* Group selector - styles all <h1> and <h2> */
+  h1, h2 {
+    font-family: Arial, sans-serif;
+    color: darkgreen;
+  }
+
+  /* Universal selector - styles all elements */
+  * {
+    margin: 5px;
+  }
+
+
+  /* ===== Combinator Selectors ===== */
+
+  /* Descendant selector - styles <em> inside any <p> */
+  p em {
+    color: orange;
+    font-style: italic;
+  }
+
+  /* Child selector - styles only direct <li> children of <ul> */
+  ul > li {
+    list-style-type: square;
+  }
+
+  /* Adjacent sibling selector - styles <p> immediately following <h2> */
+  h2 + p {
+    border: 1px solid #ccc;
+    padding: 5px;
+  }
+
+  /* General sibling selector - styles all <p> siblings after <h1> */
+  h1 ~ p {
+    font-style: italic;
+  }
+
+
+  /* ===== Pseudo-class Selectors ===== */
+
+  /* Style links on hover */
+  a:hover {
+    color: red;
+    text-decoration: underline;
+  }
+
+  /* Style first child <li> */
+  li:first-child {
+    font-weight: bold;
+  }
+
+  /* Style even <li> elements */
+  li:nth-child(even) {
+    background-color: #f0f0f0;
+  }
+
+  /* ===== Pseudo-element Selectors ===== */
+
+  /* Add content before all <h1> */
+  h1::before {
+    content: "👉 ";
+    color: teal;
+  }
+
+  /* Add content after all <p> */
+  p::after {
+    content: " 📝";
+  }
+
+
+  /* ===== Attribute Selectors ===== */
+
+  /* Style inputs with type="text" */
+  input[type="text"] {
+    border: 2px solid blue;
+    padding: 5px;
+  }
+
+  /* Style links with title attribute */
+  a[title] {
+    font-weight: bold;
+    color: purple;
+  }
+
+  /* Style any input with placeholder attribute */
+  input[placeholder] {
+    background-color: #eef;
+  }
+
+</style>
+</head>
+<body>
+
+<h1>Simple Selectors</h1>
+
+<p>This paragraph is styled by an element selector.</p>
+
+<p id="unique">This paragraph has a unique ID selector.</p>
+
+<p class="highlight">This paragraph is highlighted by a class selector.</p>
+
+<h2>Group Selectors</h2>
+
+<p>This paragraph is normal.</p>
+
+<h1>Universal Selector</h1>
+<p>This paragraph has margins applied by the universal selector.</p>
+
+<h1>Combinator Selectors</h1>
+
+<p>This paragraph contains <em>emphasized text</em> styled by a descendant selector.</p>
+
+<ul>
+  <li>First item (child selector makes this bold)</li>
+  <li>Second item</li>
+  <li>Third item</li>
+</ul>
+
+<h2>Heading 2</h2>
+<p>This paragraph immediately follows the H2 and is styled by an adjacent sibling selector.</p>
+
+<h1>Heading 1</h1>
+<p>This paragraph and the one below it are styled by a general sibling selector.</p>
+<p>Another paragraph sibling after H1.</p>
+
+<h1>Pseudo-class Selectors</h1>
+
+<a href="#" title="Tooltip for link">Hover over this link</a>
+
+<ul>
+  <li>List item 1 (first child)</li>
+  <li>List item 2 (even child)</li>
+  <li>List item 3</li>
+  <li>List item 4 (even child)</li>
+</ul>
+
+<h1>Pseudo-element Selectors</h1>
+
+<p>This paragraph will have a pencil emoji added after it.</p>
+
+<h1>Attribute Selectors</h1>
+
+<form>
+  <input type="text" placeholder="Type something here" />
+  <input type="password" placeholder="Password" />
+  <input type="submit" value="Submit" />
+</form>
+
+<p>Links with a <code>title</code> attribute are styled differently: <a href="#" title="Example link">Example Link</a></p>
+
+</body>
+</html>
