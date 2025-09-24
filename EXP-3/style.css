@@ -1,0 +1,6 @@
+/* styles.css */
+.external-style {
+    color: blue;        /* Selector: .external-style (class) */
+    font-style: italic; /* Property: font-style, Value: italic */
+    font-size: 18px;
+}
