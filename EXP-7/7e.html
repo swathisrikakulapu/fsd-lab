@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Object Example</title>
+</head>
+<body>
+    <h2>Program using String Object Properties and Methods</h2>
+
+    <textarea id="result" rows="15" cols="60"></textarea>
+
+    <script>
+        var str = "JavaScript is Powerful";
+        var output = "";
+
+        output += "Original String: " + str + "\n";
+        output += "Length of String: " + str.length + "\n\n";
+
+        output += "Uppercase: " + str.toUpperCase() + "\n";
+        output += "Lowercase: " + str.toLowerCase() + "\n";
+        output += "Character at index 5: " + str.charAt(5) + "\n";
+        output += "Index of 'is': " + str.indexOf("is") + "\n";
+        output += "Last Index of 'a': " + str.lastIndexOf("a") + "\n";
+        output += "Substring(0, 10): " + str.substring(0, 10) + "\n";
+        output += "Replace 'Powerful' with 'Amazing': " + str.replace("Powerful", "Amazing") + "\n";
+        output += "Split into words: " + str.split(" ") + "\n";
+
+        document.getElementById("result").value = output;
+    </script>
+</body>
+</html>

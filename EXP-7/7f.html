@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RegExp Object Example</title>
+</head>
+<body>
+    <h2>Program using RegExp Object Properties and Methods</h2>
+
+    <textarea id="result" rows="18" cols="60"></textarea>
+
+    <script>
+        var text = "JavaScript is powerful and javascript is popular.";
+        var pattern = /javascript/gi;   // g = global, i = ignore case
+        var output = "";
+
+        // Properties
+        output += "Pattern Source: " + pattern.source + "\n";
+        output += "Global: " + pattern.global + "\n";
+        output += "Ignore Case: " + pattern.ignoreCase + "\n";
+        output += "Multiline: " + pattern.multiline + "\n\n";
+
+        // Methods
+        output += "Test() for 'javascript': " + pattern.test(text) + "\n";
+        output += "Exec() result: " + pattern.exec(text) + "\n";
+        output += "Match() result: " + text.match(pattern) + "\n";
+        output += "Search() position of 'powerful': " + text.search(/powerful/) + "\n";
+        output += "Replace() 'javascript' with 'JS': " + text.replace(pattern, "JS") + "\n";
+
+        document.getElementById("result").value = output;
+    </script>
+</body>
+</html>

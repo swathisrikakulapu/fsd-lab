@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Date Object Example</title>
+</head>
+<body>
+    <h2>Program using Date Object Properties and Methods</h2>
+
+    <script>
+        var today = new Date();
+
+        document.write("<b>Current Date and Time:</b> " + today + "<br>");
+        document.write("<b>Day of Month:</b> " + today.getDate() + "<br>");
+        document.write("<b>Month (0-11):</b> " + today.getMonth() + "<br>");
+        document.write("<b>Year:</b> " + today.getFullYear() + "<br>");
+        document.write("<b>Day of Week (0-6):</b> " + today.getDay() + "<br>");
+        document.write("<b>Hours:</b> " + today.getHours() + "<br>");
+        document.write("<b>Minutes:</b> " + today.getMinutes() + "<br>");
+        document.write("<b>Seconds:</b> " + today.getSeconds() + "<br>");
+        document.write("<b>Readable Date:</b> " + today.toDateString() + "<br>");
+        document.write("<b>Readable Time:</b> " + today.toTimeString() + "<br><br>");
+
+        // Update date example
+        today.setDate(today.getDate() + 5); // add 5 days
+        document.write("<b>Date after 5 days:</b> " + today.toDateString() + "<br>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User-Defined Object Example</title>
+</head>
+<body>
+    <h2>User-Defined Object with Properties, Methods, Accessors, Constructor</h2>
+
+    <script>
+        // Constructor function
+        function Student(name, age, course) {
+            // Properties
+            this.name = name;
+            this.age = age;
+            this.course = course;
+
+            // Method
+            this.displayDetails = function() {
+                return "Name: " + this.name + ", Age: " + this.age + ", Course: " + this.course;
+            }
+
+            // Accessors (getter & setter for age)
+            this.getAge = function() {
+                return this.age;
+            }
+
+            this.setAge = function(newAge) {
+                if(newAge > 0) {
+                    this.age = newAge;
+                } else {
+                    alert("Invalid Age");
+                }
+            }
+        }
+
+        // Creating objects
+        var student1 = new Student("Anusha", 20, "B.Tech IT");
+        var student2 = new Student("Bhavana", 19, "B.Tech CSE");
+
+        // Display using method
+        document.write("<b>Student 1 Details:</b> " + student1.displayDetails() + "<br>");
+        document.write("<b>Student 2 Details:</b> " + student2.displayDetails() + "<br><br>");
+
+        // Using getter and setter
+        document.write("<b>Student 1 Age (getter):</b> " + student1.getAge() + "<br>");
+        student1.setAge(22);  // updating age
+        document.write("<b>Student 1 New Age (after setter):</b> " + student1.getAge() + "<br>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document Object Example</title>
+</head>
+<body>
+    <h2>Program using Document Object Properties and Methods</h2>
+
+    <p id="demo">This text will change using document methods.</p>
+
+    <button onclick="showDetails()">Show Document Details</button>
+    <button onclick="changeText()">Change Text</button>
+
+    <script>
+        function showDetails() {
+            document.write("<b>Document Title:</b> " + document.title + "<br>");
+            document.write("<b>Document URL:</b> " + document.URL + "<br>");
+            document.write("<b>Last Modified:</b> " + document.lastModified + "<br>");
+        }
+
+        function changeText() {
+            document.getElementById("demo").innerHTML = "The text has been changed using getElementById()!";
+        }
+    </script>
+</body>
+</html>
+    document.getElementById("info").innerHTML = info;
+  }
+
+  function changeTitle()

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Object Example</title>
+</head>
+<body>
+    <h2>Program using Array Object Properties and Methods</h2>
+
+    <p id="result"></p>
+
+    <script>
+        var fruits = ["Apple", "Banana", "Mango"];
+        var output = "";
+
+        output += "Original Array: " + fruits + "<br>";
+        output += "Array Length: " + fruits.length + "<br>";
+
+        fruits.push("Orange");
+        output += "After push (add Orange): " + fruits + "<br>";
+
+        fruits.pop();
+        output += "After pop (remove last): " + fruits + "<br>";
+
+        fruits.unshift("Grapes");
+        output += "After unshift (add Grapes at beginning): " + fruits + "<br>";
+
+        fruits.shift();
+        output += "After shift (remove first): " + fruits + "<br>";
+
+        fruits.sort();
+        output += "After sort: " + fruits + "<br>";
+
+        fruits.reverse();
+        output += "After reverse: " + fruits + "<br>";
+
+        output += "Joined String: " + fruits.join(" - ") + "<br>";
+
+        document.getElementById("result").innerHTML = output;
+    </script>
+</body>
+</html>

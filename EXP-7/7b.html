@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Window Object Example</title>
+</head>
+<body>
+    <h2>Program using Window Object Properties and Methods</h2>
+
+    <button onclick="showWindowDetails()">Show Window Details</button>
+    <button onclick="openNewWindow()">Open New Window</button>
+    <button onclick="delayedMessage()">Show Delayed Message</button>
+
+    <script>
+        function showWindowDetails() {
+            alert("Window Width: " + window.innerWidth +
+                  "\nWindow Height: " + window.innerHeight +
+                  "\nCurrent URL: " + window.location +
+                  "\nScreen Position: X=" + window.screenX + ", Y=" + window.screenY);
+        }
+
+        function openNewWindow() {
+            window.open("https://www.google.com", "_blank", "width=400,height=300");
+        }
+
+        function delayedMessage() {
+            window.setTimeout(function() {
+                alert("This is a delayed message using setTimeout!");
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
