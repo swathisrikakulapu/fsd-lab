@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Larger Number</title>
+</head>
+<body>
+  <h2>(a) Find Larger Number</h2>
+  <button onclick="findLargest()">Check Numbers</button>
+  <p id="output"></p>
+
+  <script>
+    function findLargest() {
+      let a = parseInt(prompt("Enter first number:"));
+      let b = parseInt(prompt("Enter second number:"));
+      let c = parseInt(prompt("Enter third number:"));
+
+      if (a === b && b === c) {
+        document.getElementById("output").innerHTML = "EQUAL NUMBERS";
+      } else {
+        let largest = Math.max(a, b, c);
+        document.getElementById("output").innerHTML = largest + " LARGER NUMBER";
+      }
+    }
+  </script>
+</body>
+</html>

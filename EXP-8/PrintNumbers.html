@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Print Numbers</title>
+</head>
+<body>
+  <h2>(c) Print Numbers 1 to 10</h2>
+  <button onclick="printNumbers()">Show Numbers</button>
+  <p id="output"></p>
+
+  <script>
+    function printNumbers() {
+      let result = "For loop: ";
+      for(let i=1; i<=10; i++) result += i + " ";
+
+      result += "<br>While loop: ";
+      let j=1;
+      while(j<=10) { result += j + " "; j++; }
+
+      result += "<br>Do-While loop: ";
+      let k=1;
+      do { result += k + " "; k++; } while(k<=10);
+
+      document.getElementById("output").innerHTML = result;
+    }
+  </script>
+</body>
+</html>

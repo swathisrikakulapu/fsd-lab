@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bank Denomination</title>
+</head>
+<body>
+  <h2>(f) Bank Denomination</h2>
+  <button onclick="denomination()">Calculate Denomination</button>
+  <p id="output"></p>
+
+  <script>
+    function denomination() {
+      let amount = parseInt(prompt("Enter amount:"));
+      let notes = [100, 50, 20, 10, 5, 2, 1];
+      let result = "Denominations:<br>";
+      for (let note of notes) {
+        let count = Math.floor(amount / note);
+        if(count > 0) {
+          result += count + " × " + note + "'s<br>";
+          amount %= note;
+        }
+      }
+      document.getElementById("output").innerHTML = result;
+    }
+  </script>
+</body>
+</html>

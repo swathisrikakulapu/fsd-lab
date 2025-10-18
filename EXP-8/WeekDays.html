@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Week Days</title>
+</head>
+<body>
+  <h2>(b) Display Week Day</h2>
+  <button onclick="showWeekDay()">Show Day</button>
+  <p id="output"></p>
+
+  <script>
+    function showWeekDay() {
+      let day = parseInt(prompt("Enter day number (0=Sunday, 6=Saturday):"));
+      let dayName = "";
+      switch(day) {
+        case 0: dayName = "Sunday"; break;
+        case 1: dayName = "Monday"; break;
+        case 2: dayName = "Tuesday"; break;
+        case 3: dayName = "Wednesday"; break;
+        case 4: dayName = "Thursday"; break;
+        case 5: dayName = "Friday"; break;
+        case 6: dayName = "Saturday"; break;
+        default: dayName = "Invalid day!";
+      }
+      document.getElementById("output").innerHTML = "Day: " + dayName;
+    }
+  </script>
+</body>
+</html>
