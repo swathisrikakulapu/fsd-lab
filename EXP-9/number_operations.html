@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            text-align: center;
+            padding: 40px;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 10px;
+            width: 200px;
+            margin: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 18px;
+            margin: 6px;
+            border: none;
+            border-radius: 5px;
+            background: #af4ca2;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background: #fff;
+            font-weight: bold;
+            color: #222;
+            min-height: 40px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h2>JavaScript Program: Factorial, Fibonacci, Primes & Palindrome</h2>
+    <input type="number" id="num" placeholder="Enter a number">
+    <br>
+    <button onclick="showFactorial()">Factorial</button>
+    <button onclick="showFibonacci()">Fibonacci</button>
+    <button onclick="showPrimes()">Prime Numbers</button>
+    <button onclick="checkPalindrome()">Palindrome?</button>
+
+    <div id="result"></div>
+
+    <script>
+        // Factorial Function
+        function showFactorial() {
+            let n = parseInt(document.getElementById("num").value);
+            if (isNaN(n) || n < 0) {
+                document.getElementById("result").innerText = "Enter a valid non-negative number.";
+                return;
+            }
+            let fact = 1;
+            for (let i = 1; i <= n; i++) fact *= i;
+            document.getElementById("result").innerText = `Factorial of ${n} = ${fact}`;
+        }
+
+        // Fibonacci Function (up to the number)
+        function showFibonacci() {
+            let n = parseInt(document.getElementById("num").value);
+            if (isNaN(n) || n < 0) {
+                document.getElementById("result").innerText = "Enter a valid non-negative number.";
+                return;
+            }
+            let series = [0];
+            let a = 0, b = 1;
+            while (b <= n) {
+                series.push(b);
+                let next = a + b;
+                a = b;
+                b = next;
+            }
+            document.getElementById("result").innerText = `Fibonacci series up to ${n}:\n${series.join(", ")}`;
+        }
+
+        // Prime Numbers Function
+        function isPrime(x) {
+            if (x < 2) return false;
+            for (let i = 2; i <= Math.sqrt(x); i++) {
+                if (x % i === 0) return false;
+            }
+            return true;
+        }
+
+        function showPrimes() {
+            let n = parseInt(document.getElementById("num").value);
+            if (isNaN(n) || n < 2) {
+                document.getElementById("result").innerText = "Enter a number greater than 1.";
+                return;
+            }
+            let primeList = [];
+            for (let i = 2; i <= n; i++) {
+                if (isPrime(i)) primeList.push(i);
+            }
+            document.getElementById("result").innerText = `Prime numbers up to ${n}:\n${primeList.join(", ")}`;
+        }
+
+        // Palindrome Function
+        function checkPalindrome() {
+            let str = document.getElementById("num").value;
+            if (str === "") {
+                document.getElementById("result").innerText = "Please enter a number.";
+                return;
+            }
+            let rev = str.split("").reverse().join("");
+            if (str === rev) {
+                document.getElementById("result").innerText = `${str} is a Palindrome.`;
+            } else {
+                document.getElementById("result").innerText = `${str} is NOT a Palindrome.`;
+            }
+        }
+    </script>
+</body>
+</html>
